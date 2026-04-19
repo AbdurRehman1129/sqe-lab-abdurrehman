@@ -1,5 +1,10 @@
 # Week 1 — Lab Environment Setup & First Test Execution
 
+📌 **Lab Task 1 Completed:**
+👉 [Click here to view Lab Task 1 Report](./Lab_Task_1_Report.md)
+
+---
+
 ## 📌 Overview
 
 This lab focuses on setting up a complete Software Quality Engineering (SQE) environment and executing the first automated test suite using **pytest**. The objective is to understand unit testing, test execution, failure analysis, and test categorization using markers.
@@ -77,8 +82,6 @@ pytest test_calculator.py -v
 📷 Output:
 ![Failure Output](images/image2.png)
 
-This step helped in understanding how pytest reports failures and how assertions work.
-
 ---
 
 ### 5. Bug Fix & Re-testing
@@ -144,7 +147,6 @@ pytest -v -m "not edge_case"
 
 ---
 
-
 ## 🚀 Conclusion
 
 This lab successfully demonstrated the complete workflow of:
@@ -155,5 +157,3 @@ This lab successfully demonstrated the complete workflow of:
 * Organizing tests using markers
 
 The environment is now fully configured for upcoming SQE labs.
-
----
