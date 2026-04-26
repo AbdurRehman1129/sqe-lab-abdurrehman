@@ -14,4 +14,4 @@ All tasks specified in the assignment have been fully executed.
 ## 📈 Comparison Graph
 The following graph illustrates the comparison of results:
 
-![Comparison Graph](images/image1.png)
+![Comparison Graph](images/quality_radar_chrome_safari.png)

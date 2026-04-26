@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 categories = [
     "Functional Suitability",
@@ -11,25 +12,37 @@ categories = [
     "Portability"
 ]
 
+app1_scores = [4.5,4,5,4.5,4.5,4,4,5]
+app2_scores = [5,5,3.5,4,5,5,3,4]
 
-app1_scores = [4.5,4,5,4.5,4.5,4,4,5]  
-app2_scores = [5,5,3.5,4,5,5,3,4]  
+# Number of variables
+N = len(categories)
 
-# Bar positions
-x = range(len(categories))
+# Compute angle for each category
+angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
 
-plt.figure(figsize=(10, 6))
+# Close the loop
+app1_scores += app1_scores[:1]
+app2_scores += app2_scores[:1]
+angles += angles[:1]
 
-plt.plot(categories, app1_scores, marker='o', label='Chrome')
-plt.plot(categories, app2_scores, marker='s', label='Safari')
+# Create radar chart
+plt.figure(figsize=(8, 8))
+ax = plt.subplot(111, polar=True)
 
-plt.xlabel("Quality Attributes")
-plt.ylabel("Scores")
-plt.title("Quality Comparison (ISO 25010)")
+# Plot data
+ax.plot(angles, app1_scores, linewidth=2, label='Chrome')
+ax.fill(angles, app1_scores, alpha=0.25)
 
-plt.xticks(rotation=30)
-plt.legend()
-plt.grid()
+ax.plot(angles, app2_scores, linewidth=2, label='Safari')
+ax.fill(angles, app2_scores, alpha=0.25)
 
-plt.tight_layout()
+# Labels
+ax.set_xticks(angles[:-1])
+ax.set_xticklabels(categories)
+
+# Title and legend
+plt.title("Quality Comparison (ISO 25010)", size=14)
+plt.legend(loc='upper right', bbox_to_anchor=(1.2, 1.1))
+
 plt.show()
